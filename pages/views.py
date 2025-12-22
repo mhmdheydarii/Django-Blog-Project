@@ -35,7 +35,7 @@ def single_post(request,pk):
             comment.save()
             messages.success(request, 'Your comment has been sent successfully!')
         else:
-            messages.error(request, 'Eror! try again')
+            messages.error(request, 'Error! try again')
     form = CommentForm()
     comments = Comment.objects.filter(post=post.id, is_approved=True)
     next_post = Post.objects.filter(status=True, id__gt=post.id).order_by('id').first()

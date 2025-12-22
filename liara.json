@@ -1,0 +1,22 @@
+{
+  "platform": "django",
+  "django": {
+    "pythonVersion": "3.13",
+    "collectStatic": true,
+    "compileMessages": false,
+    "modifySettings": true,
+    "timezone": "Asia/Tehran"
+    
+  },
+  "app": "mysite",
+  "disks": [
+    {
+      "name": "static",
+      "mountTo": "statics"
+    },
+    {
+      "name": "media",
+      "mountTo": "media"
+    }
+  ]
+}
