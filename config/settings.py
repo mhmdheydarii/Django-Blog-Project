@@ -167,6 +167,6 @@ STATICFILES_DIRS = [
 SECRET_KEY = config('SECRET_KEY', default='test')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG',cast=bool, default=True)
+DEBUG = config('DEBUG',cast=bool)
 
 ALLOWED_HOSTS = ['*']
