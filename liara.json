@@ -1,0 +1,22 @@
+{
+  "platform": "django",
+  "django": {
+    "pythonVersion": "3.15",
+    "collectStatic": true,
+    "compileMessages": false,
+    "modifySettings": true,
+    "timezone": "Asia/Tehran"
+    
+  },
+  "app": "django-blog-m",
+  "disks": [
+    {
+      "name": "statics",
+      "mountTo": "statics"
+    },
+    {
+      "name": "media",
+      "mountTo": "media"
+    }
+  ]
+}
