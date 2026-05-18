@@ -21,7 +21,7 @@ def index(request, author=None, tag_name=None):
     except EmptyPage:
         posts = posts.get_page(1)
     context = {'posts':posts, 'categories':categories}
-    return render(request, 'index.html', context)
+    return render(request, 'pages/index.html', context)
 
 
 def single_post(request,pk):
@@ -41,11 +41,11 @@ def single_post(request,pk):
     next_post = Post.objects.filter(status=True, id__gt=post.id).order_by('id').first()
     prev_post = Post.objects.filter(status=True, id__lt=post.id).order_by('-id').first()
     context = {'post':post, 'next_post':next_post ,'prev_post':prev_post, 'comments':comments, 'form':form}
-    return render(request, 'single-post.html', context)
+    return render(request, 'pages/single-post.html', context)
 
 
 def about(request):
-    return render(request, 'about.html')
+    return render(request, 'pages/about.html')
 
 
 def contact(request):
@@ -59,13 +59,13 @@ def contact(request):
 
     form = ContactForm()
     context = {'form':form}
-    return render(request, 'contact.html', context)
+    return render(request, 'pages/contact.html', context)
 
 
 def category(request, author=None, category=None):
     posts = Post.objects.filter(status=True)
     categories = Category.objects.all()
-    
+    current_category = Category.objects.get(name=category)
     if author:
         posts = posts.filter(author__name = author)
     if category:
@@ -79,8 +79,8 @@ def category(request, author=None, category=None):
         posts = posts.get_page(1)
     except EmptyPage:
         posts = posts.get_page(1)
-    context = {'posts':posts, 'categories':categories}
-    return render(request, 'category.html', context)
+    context = {'posts':posts, 'categories':categories, "current_category":current_category}
+    return render(request, 'pages/category.html', context)
 
 
 def search(request):
@@ -89,4 +89,4 @@ def search(request):
         if s := request.GET.get('s'):
             posts = posts.filter(title__icontains=s)
     context = {'posts':posts}
-    return render(request, 'index.html', context)
+    return render(request, 'pages/index.html', context)
