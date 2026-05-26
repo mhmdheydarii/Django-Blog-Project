@@ -2,7 +2,7 @@
   <h1 style="text-align:center; color:#2c3e50;">My First Django Project</h1>
 
   <p align="center">
-  <img src="./docs/django.png" width="700"/>
+  <img src="./docs/blog.png" width="700"/>
   </p>
 
   <h2 style="color:#34495e;">About the Project</h2>
