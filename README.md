@@ -11,6 +11,7 @@
     The goal of this project is to create a programming blog that shares practical information — making it easier for beginner developers to access helpful and concise content during their learning journey.
   </p>
 </section>
+
 <h2>⚙️ Installation (Windows)</h2>
 
 <p>Follow these steps to set up and run the project locally.</p>
@@ -20,7 +21,7 @@
 <h3>1. Clone the repository</h3>
 
 ```bash
-git clone https://github.com/username/project-name.git
+git clone https://github.com/mhmdheydarii/Django-Blog-Project.git
 ```
 
 <br>
@@ -28,7 +29,7 @@ git clone https://github.com/username/project-name.git
 <h3>2. Navigate to the project directory</h3>
 
 ```bash
-cd project-name
+cd django_blog_project
 ```
 
 <br>
@@ -81,20 +82,13 @@ pip install -r requirements.txt
 
 <h3>6. Run the project</h3>
 
-<p><b>Python</b></p>
 
 ```bash
-python main.py
+python manage.py makemigrations
 ```
-
-<p><b>FastAPI</b></p>
-
 ```bash
-uvicorn app.main:app --reload
+python manage.py migrate
 ```
-
-<p><b>Django</b></p>
-
 ```bash
 python manage.py runserver
 ```
