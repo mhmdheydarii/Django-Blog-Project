@@ -1,0 +1,23 @@
+{% load static %}
+{% for post in latest_post_object %}
+<div class="s-hero__slide">
+    <div class="s-hero__slide-bg" style="background-image: url('{{post.image.url}}');"></div>
+    <div class="row s-hero__slide-content animate-this">
+        <div class="column">
+            <div class="s-hero__slide-meta">
+                <span class="byline">
+                    Posted by
+                    <span class="author">
+                        <a href="{% url 'pages:author' post.author.name %}">{{post.author}}</a>
+                    </span>
+                </span>
+            </div>
+            <h1 class="s-hero__slide-text">
+                <a href="{% url 'pages:single_post' post.id %}">
+                    {{post.title}}
+                </a>
+            </h1>
+        </div>
+    </div>
+</div> <!-- end s-hero__slide -->
+{% endfor %}

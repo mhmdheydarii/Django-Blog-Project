@@ -12,7 +12,7 @@ def index(request, author=None, tag_name=None):
     if tag_name:
         posts = posts.filter(tag__name = tag_name)
     
-    posts = Paginator(posts, 3)
+    posts = Paginator(posts, 9)
     try:
         page_number = request.GET.get('page')
         posts = posts.get_page(page_number)
@@ -71,7 +71,7 @@ def category(request, author=None, category=None):
     if category:
         posts = posts.filter(category__name = category)
 
-    posts = Paginator(posts, 3)
+    posts = Paginator(posts, 9)
     try:
         page_number = request.GET.get('page')
         posts = posts.get_page(page_number)
@@ -90,3 +90,4 @@ def search(request):
             posts = posts.filter(title__icontains=s)
     context = {'posts':posts}
     return render(request, 'pages/index.html', context)
+

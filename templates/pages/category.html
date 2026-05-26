@@ -151,9 +151,7 @@
 
                         <div class="entry__thumb">
                             <a href="{% url 'pages:single_post' post.id %}" class="thumb-link">
-                                <img src="{% static 'images/thumbs/masonry/macbook-600.jpg' %}"
-                                    srcset="{% static 'images/thumbs/masonry/macbook-600.jpg' %} 1x, {% static 'images/thumbs/masonry/macbook-1200.jpg' %} 2x"
-                                    alt="">
+                                <img src={{post.image.url}}>
                             </a>
                         </div> <!-- end entry__thumb -->
 
@@ -169,6 +167,7 @@
                                         </span>
                                     </span>
                                     <span class="cat-links">
+                                        Category:
                                         {% for cat in post.category.all %}
                                         <a href="{% url 'pages:category' cat.name %}">{{cat.name}}</a>
                                         {% endfor %}
@@ -191,7 +190,7 @@
 
             <div class="row">
                 <div class="column large-12">
-
+                    {% if paginator %}
                     <nav class="pgn">
                         <ul>
                             {% if posts.has_previous %}
@@ -222,6 +221,7 @@
                             {% endif %}
                         </ul>
                     </nav> <!-- end pgn -->
+                    {% endif %}
                 </div> <!-- end column -->
             </div> <!-- end row -->
 

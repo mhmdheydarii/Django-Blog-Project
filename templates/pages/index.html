@@ -124,21 +124,8 @@
     <section id="hero" class="s-hero">
 
         <div class="s-hero__slider">
-
-            <div class="s-hero__slide">
-
-                <div class="s-hero__slide-bg"
-                    style="background-image: url('{% static 'images/slide1-bg-3000.jpg' %}');"></div>
-
-                {% include 'includes/lates-post.html' %}
-
-            </div> <!-- end s-hero__slide -->
-
-
-
+            {% latest_post %}
         </div> <!-- end s-hero__slider -->
-
-
 
     </section> <!-- end s-hero -->
 
@@ -157,11 +144,7 @@
 
                     <div class="grid-sizer"></div>
 
-                    <div class="lines">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                    
                     {% for post in posts %}
                     <article class="brick entry" data-aos="fade-up">
 
@@ -179,20 +162,17 @@
                             <div class="entry__header">
                                 <h1 class="entry__title"><a
                                         href="{% url 'pages:single_post' post.id %}">{{post.title}}</a></h1>
-
                                 <div class="entry__meta">
                                     <span class="byline">By:
                                         <span class='author'>
                                             <a href=" {% url 'pages:author' post.author.name %}">{{post.author}}</a>
                                         </span>
                                     </span>
-
-                                    {% for cat in post.category.all %}
-                                    <span class="cat-links">
-                                        <a href="{% url 'pages:category' cat.name %}">{{cat.name}} {% if not forloop.last %}, {% endif %}</a>
+                                    <span class="cat-links"> Category:
+                                        {% for cat in post.category.all %}
+                                        <a href="{% url 'pages:category' cat.name %}">{{cat.name}}</a>
+                                        {% endfor %}
                                     </span>
-                                    {% endfor %}
-
                                 </div>
                             </div>
                             <div class="entry__excerpt">
@@ -211,7 +191,7 @@
 
             <div class="row">
                 <div class="column large-12">
-
+                    {% if posts.has_other_pages %}
                     <nav class="pgn">
                         <ul>
                             {% if posts.has_previous %}
@@ -229,8 +209,8 @@
                                 </span></li>
                             {% else %}
                             <li><span class="pgn__num">
-                                    {{ i }}
-                                </span></li>
+                                <a href="?page={{ i }}">{{i}}</a>
+                            </span></li>
                             {% endif %}
                             {% endfor %}
                             {% if posts.has_next %}
@@ -242,6 +222,7 @@
                             {% endif %}
                         </ul>
                     </nav> <!-- end pgn -->
+                    {% endif %}
                 </div> <!-- end column -->
             </div> <!-- end row -->
 
