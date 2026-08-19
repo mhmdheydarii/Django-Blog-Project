@@ -7,7 +7,7 @@
 
   <h2 style="color:#34495e;">About the Project</h2>
   <p>
-    This is my first project built with Django. I'm trying to test my skills and improve my coding ability in Django.
+    This project was created to practice my Django skills and improve my understanding of Django development.
   </p>
 
   <h2 style="color:#34495e;">Project Goal</h2>
@@ -15,6 +15,25 @@
     The goal of this project is to create a programming blog that shares practical information — making it easier for beginner developers to access helpful and concise content during their learning journey.
   </p>
 </section>
+
+
+<h2>Features</h2>
+<ul>
+  <li>Session Authentication</li>
+  <li>Searching</li>
+  <li>Filtering</li>
+  <li>Commenting</li>
+</ul>
+
+
+<h2>Technologies</h2>
+<ul>
+  <li>Python</li>
+  <li>Django</li>
+  <li>SQLite</li>
+  <li>HTML, CSS, JavaScript</li>
+</ul>
+
 
 <h2>⚙️ Installation (Windows)</h2>
 
@@ -82,9 +101,19 @@ at the beginning of your terminal line.
 pip install -r requirements.txt
 ```
 
+
+<h3>6. Configure environment variables</h3>
+
+<p>Create a .env file in the project root and add the required environment variables.</p>
+
+```bash
+DEBUG=True
+SECRET_KEY=secret_key
+ALLOWED_HOST="*"
+```
 <br>
 
-<h3>6. Run the project</h3>
+<h3>7. Run the project</h3>
 
 
 ```bash
