@@ -100,7 +100,7 @@ at the beginning of your terminal line.
 ```bash
 pip install -r requirements.txt
 ```
-
+<br>
 
 <h3>6. Configure environment variables</h3>
 
