@@ -1,5 +1,5 @@
 <section style="max-width:700px; margin:auto; font-family:Arial, sans-serif; line-height:1.7; color:#333;">
-  <h1 style="text-align:center; color:#2c3e50;">My First Django Project</h1>
+  <h1 style="text-align:center; color:#2c3e50;">Django Blog Project</h1>
 
   <p align="center">
   <img src="./docs/blog.png" width="700"/>
